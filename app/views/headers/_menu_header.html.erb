@@ -1,12 +1,22 @@
-<div id="menu_header" class="top-bar">
-  <div class="top-bar-left">
-    <ul class="menu">
-      <% if current_user %>
-        <li> <div id="display_email" class="links"> <%= current_user.email %> </div> </li>
-        <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
-      <% elsif current_user.nil? %>
-        <li> <div id="login" class="links"> <%= link_to "Sign In", new_user_session_path %> </div> </li>
-      <% end %>
-    </ul>
+<div id = "header">
+  <div id="menu_header" class="top-bar">
+    <div class="top-bar-right">
+      <ul class="menu">
+        <% if current_user %>
+          <% if session[:cart_id] %>
+            <li> <div id="cart"> <%= link_to "Cart", cart_path(session[:cart_id])%> </div> </li>
+          <% end %>
+          <li> <div id="display_email" class="links"> <%= current_user.email %> </div> </li>
+          <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
+        <% elsif current_user.nil? %>
+          <li> <div id="login" class="links"> <%= link_to "Sign In", new_user_session_path %> </div> </li>
+          <li> <div id="login" class="links"> <%= link_to "Sign Up", new_user_registration_path %> </div> </li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 </div>
+
+<div class="notice"> <%= notice %> </div>
+<br/>
+<br/>

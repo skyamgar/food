@@ -1,0 +1,28 @@
+<table>
+  <tr>
+    <th> Product Name </th>
+    <th> Product Description </th>
+    <th> Product Price </th>
+    <th> Product Quantity </th>
+  </tr>
+
+  <% @cart.order_products.each do |order_product| %>
+    <tr>
+      <td>
+        <%= order_product.food_item.name %>
+      </td>
+      <td>
+        <%= order_product.food_item.description %>
+      </td>
+      <td>
+        <%= order_product.food_item.price %>
+      </td>
+      <td>
+        <%= order_product.quantity %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<div class='list_action'>
+  <%= button_to 'Checkout', orders_path(cart_id: @cart.id), class: 'button' %></br>
+</div>

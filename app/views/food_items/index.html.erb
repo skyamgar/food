@@ -1,6 +1,9 @@
-<%= render partial: 'headers/menu_header' %>
-
 <table>
+  <tr>
+    <th> Product Name </th>
+    <th> Product Description </th>
+    <th> Product Price </th>
+  </tr>
   <% @food_items.each do |food_item| %>
     <tr>
       <td>
@@ -13,7 +16,7 @@
         <%= food_item.price %>
       </td>
       <td class='list_actions'>
-        <%= link_to 'Add To Cart', '#' %></br>
+        <%= button_to 'Add To Cart', order_products_path(food_item_id: food_item), class: 'button' %></br>
       </td>
     </tr>
   <% end %>

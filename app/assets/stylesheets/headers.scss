@@ -1,3 +1,17 @@
-.links {
-  color: #008CBA;
+#header{
+  .links {
+    color: #008CBA;
+  }
+
+  .menu{
+    display: flex;
+    float: right;
+    margin-right: 5px;
+
+    li {
+      padding-right: 10px;
+    }
+  }
+
+
 }

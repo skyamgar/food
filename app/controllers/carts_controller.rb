@@ -1,5 +1,5 @@
 class CartsController < ApplicationController
-  def new
-    @cart = Cart.new
-  end
+  include CurrentCart
+
+  before_action :set_cart
 end
