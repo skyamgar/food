@@ -1,0 +1,29 @@
+.login-page {
+  -moz-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  height: 100%;
+
+  .transparent_login {
+    padding-top: 8%;
+    width: 35%;
+  }
+
+  .login_parent_div {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 1em;
+    border-radius: 10px;
+  }
+
+  .login {
+
+    form {
+      .field{
+        padding: 0em 1em 0em 1em;
+      }
+    }
+  }
+}

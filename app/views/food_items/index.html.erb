@@ -1,0 +1,20 @@
+<%= render partial: 'headers/menu_header' %>
+
+<table>
+  <% @food_items.each do |food_item| %>
+    <tr>
+      <td>
+        <%= food_item.name %>
+      </td>
+      <td>
+        <%= food_item.description %>
+      </td>
+      <td>
+        <%= food_item.price %>
+      </td>
+      <td class='list_actions'>
+        <%= link_to 'Add To Cart', '#' %></br>
+      </td>
+    </tr>
+  <% end %>
+</table>
