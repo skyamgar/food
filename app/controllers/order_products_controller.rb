@@ -11,4 +11,23 @@ class OrderProductsController < ApplicationController
       redirect_to :root
     end
   end
+
+  def destroy
+    order_product = OrderProduct.find(params[:id])
+    if order_product.quantity <= 1
+      order_product.destroy
+    else
+      order_product.quantity -= 1
+    end
+
+    if order_product.save
+      if @cart.order_products.empty?
+        redirect_to :root, notice: "Item deleted successfully"
+      else
+        redirect_to cart_path(@cart), notice: "Item deleted successfully"
+      end
+    else
+      redirect_to :root, notice: "Can not be Deleted"
+    end
+  end
 end
