@@ -1,0 +1,26 @@
+<% if @orders.present? %>
+  <table>
+    <tr>
+      <th> Order ID </th>
+      <th> Amount </th>
+    </tr>
+    <% @orders.each do |order| %>
+      <tr>
+        <td>
+          <%= order.id %>
+        </td>
+        <td>
+          <%= order.amount %>
+        </td>
+        <td class='list_actions'>
+          <div style="display: flex">
+            <%= button_to 'View', order_path(id: order.id), method: :get, class: 'button', id: "view_order" %></br>
+            <%= button_to 'View Receipt', order_receipt_path(id: order.order_receipt.id), method: :get, class: 'button' %></br>
+          </div>
+        </td>
+      </tr>
+    <% end %>
+  </table>
+<% else %>
+   There are no orders.
+<% end %>

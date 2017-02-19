@@ -21,7 +21,7 @@
         <%= order_product.quantity %>
       </td>
       <td>
-        <%= button_to "Delete", order_product_path(order_product.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= button_to "Delete", order_product_path(order_product.id), method: :delete, data: { confirm: 'Are you sure?' }, class: 'button' %>
       </td>
     </tr>
   <% end %>

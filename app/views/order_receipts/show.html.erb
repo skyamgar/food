@@ -1,0 +1,28 @@
+<table>
+  <tr>
+    <th> Order ID </th>
+    <th> Order Amount </th>
+    <th> Service Charge </th>
+    <th> Total Amount </th>
+  </tr>
+  <tr>
+    <td>
+      <%= @order_receipt.order.id %>
+    </td>
+    <td>
+      <%= @order_receipt.order.amount %>
+    </td>
+    <td>
+      <%= @order_receipt.try(:service_charge) %>
+    </td>
+    <td>
+      <%= @order_receipt.total_amount %>
+    </td>
+  </tr>
+  <tr>
+    <th> Total </th>
+    <td> </td>
+    <td> </td>
+    <th> <%= @order_receipt.total_amount %> </th>
+  </tr>
+</table>

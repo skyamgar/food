@@ -7,6 +7,7 @@
           <% if session[:cart_id] %>
             <li> <div id="cart"> <%= link_to "Cart", cart_path(session[:cart_id])%> </div> </li>
           <% end %>
+          <li> <div id="my_orders"> <%= link_to "My Orders", orders_path %> </div> </li>
           <li> <div id="display_email" class="links"> <%= current_user.email %> </div> </li>
           <li> <%= link_to "Sign Out", destroy_user_session_path, method: :delete, data: { confirm: 'Are you sure?' } %> </li>
         <% elsif current_user.nil? %>
